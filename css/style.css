@@ -413,3 +413,11 @@ footer p {
   margin: 0;
   font-size: 0.9rem;
 }
+
+.page-grid {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
