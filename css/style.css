@@ -182,12 +182,12 @@ main.content {
   margin-bottom: 0.5rem;
 }
 .trainer-img {
-  width: 200px;       /* fixed width */
-  height: 200px;      /* fixed height */
-  object-fit: cover;  /* crop instead of squish */
-  border-radius: 50%; /* keep circular */
+  width: 200px;
+  height: 200px;     
+  object-fit: cover; 
+  border-radius: 50%;
   display: block;
-  margin: 0 auto 1rem; /* center images */
+  margin: 0 auto 1rem; 
 }
 
 
