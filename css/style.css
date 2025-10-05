@@ -421,3 +421,78 @@ footer p {
     "sidebar main"
     "footer footer";
 }
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Мобильные устройства (до 600px) */
+@media (max-width: 600px) {
+  h1 { font-size: 22px; }
+  p { font-size: 14px; }
+  .card, .service-box { flex: 1 1 100%; } /* карточки и секции в столбик */
+}
+
+/* Планшеты (600–992px) */
+@media (min-width: 601px) and (max-width: 992px) {
+  h1 { font-size: 28px; }
+  p { font-size: 16px; }
+  .card, .service-box { flex: 1 1 45%; }
+}
+
+/* Десктоп (более 992px) */
+@media (min-width: 993px) {
+  h1 { font-size: 36px; }
+  p { font-size: 18px; }
+  .card, .service-box { flex: 1 1 30%; }
+}
+
+#carouselExample img {
+  height: 400px;
+  object-fit: cover;
+}
+
+/*Task 7: carousel*/
+.carousel-track {
+  width: 100%;
+  overflow: hidden;
+  background-color: #000; /* тёмный фон под фото */
+  padding: 20px 0;
+}
+
+.carousel-slide {
+  display: flex;
+  width: calc(300px * 6); /* ширина = количество фото × ширина одной картинки */
+  animation: scroll 20s linear infinite; /* 20s — скорость анимации */
+}
+
+.carousel-slide img {
+  width: 300px;   /* уменьшенный размер */
+  height: 200px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 10px;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* двигаем половину ширины, чтобы цикл повторялся плавно */
+}
+
+
+/*contact form*/
+.contact-section {
+  background: linear-gradient(135deg, #f0f4ff, #ffffff);
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 6px rgba(13, 110, 253, 0.4);
+}
