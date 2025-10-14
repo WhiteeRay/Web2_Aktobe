@@ -10,8 +10,8 @@
 </head>
 <body> 
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark main-nav" style="background-color: #001f3f;"> <!--bg-dark-->
-      <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark main-nav" style="background-color: #001f3f;">
+      <div class="container">
         <a class="navbar-brand" href="index.html">Fitness Club</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
@@ -22,28 +22,24 @@
             <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
             <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul> 
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="btn btn-outline-light ms-2 px-3 py-1 rounded-pill" href="login.html">Login</a>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
-    <!--<h1>Fitness Club</h1>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
-    </nav>-->
-    
+
     <div class="carousel-track">
       <div class="carousel-slide">
         <img src="images/slide1.jpg" alt="slide1">
         <img src="images/slide2.jpg" alt="slide2">
         <img src="images/slide3.jpg" alt="slide3">
-    <!-- Повтор фото для плавного цикла -->
         <img src="images/slide1.jpg" alt="slide1">
         <img src="images/slide2.jpg" alt="slide2">
         <img src="images/slide3.jpg" alt="slide3">
-
         <img src="images/slide1.jpg" alt="slide1">
         <img src="images/slide2.jpg" alt="slide2">
       </div>
@@ -51,22 +47,27 @@
   </header>
 
   <main class="content">
-    <section class="hero">
+    <section class="hero text-center py-4">
       <h2 class="section-title">Welcome to Fitness Club!</h2>
       <p>We offer modern equipment, group classes, and personal training.</p>
       <img src="images/gym.jpg" alt="Gym" class="profile-img">
     </section>
 
-    <section class="features">
+    <section class="features text-center">
       <h3>Why Choose Us?</h3>
-      <div class="card">Modern Equipment</div>
-      <div class="card">Professional Trainers</div>
-      <div class="card">Group Programs</div>
+      <div class="card d-inline-block m-2 p-3">Modern Equipment</div>
+      <div class="card d-inline-block m-2 p-3">Professional Trainers</div>
+      <div class="card d-inline-block m-2 p-3">Group Programs</div>
     </section>
   </main>
 
-  <footer class="bg-dark text-white text-center py-3">
-    <p>Fitness Club © 2025 | Team “FitWeb” — Nurdana Modabay, Aknur Mazhitova</p>
+  <footer class="bg-dark text-white text-center py-4 mt-4">
+    <div class="container">
+      <p class="mb-1">Fitness Club © 2025 | Team “FitWeb” — Nurdana Modabay, Aknur Mazhitova</p>
+      <p class="mb-0">
+        <a href="faq.html" class="text-decoration-none text-info">Have questions? Visit our FAQ page →</a>
+      </p>
+    </div>
   </footer>
 </body>
 </html>

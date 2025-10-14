@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Accordion</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 50px;
+    }
+
+    .accordion {
+      background-color: white;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .question {
+      padding: 15px 20px;
+      cursor: pointer;
+      border-bottom: 1px solid #ddd;
+      transition: background-color 0.3s;
+    }
+
+    .question:hover {
+      background-color: #f7f7f7;
+    }
+
+    .answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      background-color: #fafafa;
+      transition: max-height 0.4s ease;
+    }
+
+    .answer.open {
+      padding: 15px 20px;
+      max-height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-btn">← Back</a>
+  <h1>Frequently Asked Questions</h1>
+
+  <div class="accordion">
+    <div class="question">What is your return policy?</div>
+    <div class="answer">We offer a 30-day return policy with full refunds for unused items.</div>
+
+    <div class="question">Do you ship internationally?</div>
+    <div class="answer">Yes, we ship to over 50 countries worldwide!</div>
+
+    <div class="question">How can I contact support?</div>
+    <div class="answer">You can reach us via email at support@example.com.</div>
+  </div>
+
+  <script src="js/accordion.js"></script>
+</body>
+</html>
