@@ -1,3 +1,4 @@
+//Task 4
 const content = document.querySelector('.content');
 const toggleBtn = document.getElementById('themeToggle');
 

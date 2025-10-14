@@ -1,4 +1,4 @@
-// accordion.js
+// Task 2
 document.addEventListener("DOMContentLoaded", function () {
   const questions = document.querySelectorAll(".question");
 
@@ -6,10 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
     question.addEventListener("click", () => {
       const answer = question.nextElementSibling;
 
-      // Toggle the "open" class
       answer.classList.toggle("open");
 
-      // Smooth expand/collapse
+  
       if (answer.classList.contains("open")) {
         answer.style.maxHeight = answer.scrollHeight + "px";
       } else {
