@@ -1,7 +1,7 @@
 const content = document.querySelector('.content');
 const toggleBtn = document.getElementById('themeToggle');
 
-// Load theme from local storage
+
 const savedTheme = localStorage.getItem('mainTheme');
 if (savedTheme === 'dark') {
   content.classList.add('dark-theme');
@@ -9,7 +9,7 @@ if (savedTheme === 'dark') {
   content.classList.add('light-theme');
 }
 
-// Toggle on button click
+
 toggleBtn.addEventListener('click', () => {
   content.classList.toggle('dark-theme');
   content.classList.toggle('light-theme');
