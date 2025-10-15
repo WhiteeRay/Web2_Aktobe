@@ -510,8 +510,8 @@ footer p {
 
 /* Make content full width in dark mode */
 .content.dark-theme {
-  background-color: #121212;
-  color: #f5f5f5;
+  background-color: #000000;
+  color: #ffffff;
   max-width: 100%;   /* override the 1000px limit */
   margin: 0;         /* remove side margins */
   padding: 2rem;     /* optional inner padding */
@@ -521,7 +521,7 @@ footer p {
 /* Optional: make inner cards match dark mode */
 .content.dark-theme .card {
   background-color: #1e1e1e;
-  color: #f5f5f5;
+  color: #ffffff;
   border: none;
 }
 
