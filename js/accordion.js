@@ -1,4 +1,4 @@
-// Task 2
+
 document.addEventListener("DOMContentLoaded", function () {
   const questions = document.querySelectorAll(".question");
 

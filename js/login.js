@@ -1,4 +1,4 @@
-// Task 1
+//Task 1 DOM
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("loginForm");
 

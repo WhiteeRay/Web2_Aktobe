@@ -506,7 +506,22 @@ footer p {
 /* Make sure it spans the full width */
 .content > * {
   max-width: 100%;
+  
 }
+.content.light-theme {
+  background-color: #ffffff;
+  color: #000000;
+  max-width: 100%;
+  margin: 0;
+  padding: 2rem;
+}
+
+.content.light-theme .card {
+  background-color: #f9f9f9;
+  color: #000000;
+  border: 1px solid #ccc;
+}
+
 
 /* Make content full width in dark mode */
 .content.dark-theme {

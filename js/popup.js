@@ -1,4 +1,4 @@
-// Task 3
+
 const popupOverlay = document.getElementById("popupOverlay");
 const openPopupBtn = document.getElementById("openPopupBtn");
 const closePopupBtn = document.getElementById("closePopupBtn");
@@ -25,7 +25,6 @@ window.addEventListener("click", (event) => {
 
 contactForm.addEventListener("submit", (event) => {
   event.preventDefault(); 
-//Task 5
   const now = new Date();
   const options = {
     year: 'numeric',
