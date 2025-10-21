@@ -1,44 +1,59 @@
+//Task 2 Responding to Events with Callbacks
 
-const popupOverlay = document.getElementById("popupOverlay");
-const openPopupBtn = document.getElementById("openPopupBtn");
-const closePopupBtn = document.getElementById("closePopupBtn");
-const contactForm = document.getElementById("contactForm");
-const dateTimeDisplay = document.getElementById("dateTimeDisplay");
+document.addEventListener("keydown", (event) => {
+  const navItems = document.querySelectorAll("nav a");
+  let index = Array.from(navItems).indexOf(document.activeElement);
 
-
-openPopupBtn.addEventListener("click", () => {
-  popupOverlay.style.display = "flex";
-});
-
-
-closePopupBtn.addEventListener("click", () => {
-  popupOverlay.style.display = "none";
-});
-
-
-window.addEventListener("click", (event) => {
-  if (event.target === popupOverlay) {
-    popupOverlay.style.display = "none";
+  if (event.key === "ArrowRight") {
+    index = (index + 1) % navItems.length;
+    navItems[index].focus();
+  } else if (event.key === "ArrowLeft") {
+    index = (index - 1 + navItems.length) % navItems.length;
+    navItems[index].focus();
   }
 });
 
 
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault(); 
-  const now = new Date();
-  const options = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: true
+const form = document.getElementById("contactForm");
+const statusMessage = document.getElementById("statusMessage");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = {
+    name: form.name.value,
+    email: form.email.value,
+    message: form.message.value,
   };
 
-  const formattedDate = now.toLocaleString('en-US', options);
+  const handleResponse = (success) => {
+    const now = new Date();
+    const formattedDate = now.toLocaleString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true,
+    });
 
-  dateTimeDisplay.textContent = `Message sent on: ${formattedDate}`;
+    statusMessage.textContent = success
+      ? `Message sent successfully on ${formattedDate}!`
+      : "Failed to send message.";
+    statusMessage.style.color = success ? "green" : "red";
+  };
 
-  contactForm.reset();
+  try {
+    const response = await fetch("https://example.com/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    handleResponse(response.ok);
+    form.reset();
+  } catch (error) {
+    handleResponse(false);
+  }
 });

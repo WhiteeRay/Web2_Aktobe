@@ -1,6 +1,16 @@
 //Task 1 DOM
 document.addEventListener("DOMContentLoaded", () => {
+  //Task 2 Current time
+  const showTimeBtn = document.getElementById("showTimeBtn");
+  const currentTimeDisplay = document.getElementById("currentTime");
+
+  showTimeBtn.addEventListener("click", () => {
+    const now = new Date().toLocaleTimeString();
+    currentTimeDisplay.textContent = "Current Time: " + now;
+  });
+
   const form = document.getElementById("loginForm");
+  
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();

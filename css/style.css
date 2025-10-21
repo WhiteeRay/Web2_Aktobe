@@ -631,3 +631,15 @@ input:focus, textarea:focus {
   background-color: #3454d1;
   transform: translateY(-2px);
 }
+#navMenu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+#navMenu li:focus {
+  outline: 2px solid blue;
+  background-color: lightblue;
+  border-radius: 5px;
+  padding: 0.3rem;
+}
