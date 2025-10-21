@@ -87,3 +87,5 @@ function loadNews(category) {
     newsContainer.style.opacity = 1;
   }, 150);
 }
+
+

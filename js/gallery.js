@@ -15,3 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 });
+//Task 2 === Arrays and Loops ===
+const workouts = ["Cardio", "Strength Training", "Yoga", "CrossFit", "Zumba", "Personal Coaching"];
+const workoutList = document.getElementById("workoutList");
+
+for (let workout of workouts) {
+  const li = document.createElement("li");
+  li.textContent = ` ${workout}`;
+  workoutList.appendChild(li);
+}
