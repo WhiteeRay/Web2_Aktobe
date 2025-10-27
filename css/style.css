@@ -696,3 +696,41 @@ input:focus, textarea:focus {
 #dumbbell.bounce {
   transform: scale(1.2) rotate(20deg);
 }
+
+
+
+/* ASS 7 */
+/* suggestions (autocomplete) */
+.suggestions {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  z-index: 1000;
+  max-height: 220px;
+  overflow-y: auto;
+  display: none;
+}
+.suggestion-item { padding:8px 10px; cursor:pointer; }
+.suggestion-item:hover { background: #f6f6f6; }
+
+/* highlight */
+.search-highlight { background: #fff176; padding: 0 2px; border-radius:2px; }
+
+/* toast */
+.toast-msg{ background:#333; color:#fff; padding:10px 14px; margin-top:8px; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,.2); display:none; }
+
+/* scroll progress bar */
+#scrollProgress { background: rgba(0,0,0,0.06); height:6px; left:0; top:0; position:fixed; width:100%; z-index:9999; }
+#scrollBar { height:100%; width:0; background: linear-gradient(90deg,#ff7a18,#af002d 70%); transition: width 0.12s linear; }
+
+/* basic stat style */
+.stat { font-size:20px; margin:10px 20px; }
+
+/* copy button */
+.copy-btn { margin-top:6px; }
+
+/* spinner alignment (Bootstrap) */
+.spinner-border { vertical-align: middle; margin-right:6px; }
+
