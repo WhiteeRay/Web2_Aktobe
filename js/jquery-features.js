@@ -6,7 +6,6 @@ $(document).ready(function(){
   
     $("#searchInput").on("keyup input", function(){
     const val = $(this).val().toLowerCase().trim();
-    // Фильтруем элементы списка:
     $("#itemsList li").each(function(){
       const text = $(this).text().toLowerCase();
       const match = text.indexOf(val) > -1;
@@ -110,19 +109,19 @@ $(document).ready(function(){
   // Task 6: Loading spinner on submit
   $(document).on("submit", "form", function(e){
     const $form = $(this);
-    // Найдём кнопку submit внутри формы
+  
     const $btn = $form.find("button[type='submit'], input[type='submit']").first();
-    if(!$btn.length) return; // если нет кнопки, ничего не делаем
-    e.preventDefault(); // предотвращаем реальную отправку для демонстрации
+    if(!$btn.length) return;
+    e.preventDefault(); 
     $btn.prop("disabled", true);
     const origHtml = $btn.html();
-    // использую Bootstrap spinner если есть, иначе текст
+  
     $btn.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Please wait...');
-    // симуляция запроса
+   
     setTimeout(() => {
       $btn.prop("disabled", false).html(origHtml);
       showToast("Form submitted successfully");
-      // при реальной форме удалите e.preventDefault() и не возвращайте исходный код, а отправляйте форму
+     
     }, 1200);
   });
 
