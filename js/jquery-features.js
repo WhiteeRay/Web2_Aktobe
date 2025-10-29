@@ -1,5 +1,3 @@
-// js/jquery-features.js
-// Все функции запускаются при готовности документа
 $(document).ready(function(){
 
   console.log("jQuery is ready!"); 
@@ -11,18 +9,18 @@ $(document).ready(function(){
       const match = text.indexOf(val) > -1;
       $(this).toggle(match);
     });
-    // Подсветка совпадений — если введено слово
+    
     if(val.length) {
       highlightText("#itemsList li", val);
     } else {
-      // удалить подсветку: заменить HTML на чистый текст
+      
       $("#itemsList li").each(function(){ $(this).text($(this).text()); });
     }
   });
 
   // 2) Simple autocomplete suggestions
   const suggestions = [];
-  // Собираем значения из списка itemsList (если есть)
+  
   $("#itemsList li").each(function(){ suggestions.push($(this).text().trim()); });
 
   $("#searchInput").on("input", function(){
@@ -37,21 +35,21 @@ $(document).ready(function(){
     }
   });
 
-  // Клик на подсказку — устанавливаем в input и триггерим keyup
+ 
   $(document).on("click", ".suggestion-item", function(){
     const val = $(this).text();
     $("#searchInput").val(val).trigger("keyup");
     $("#suggestions").hide().empty();
   });
 
-  // Закрыть подсказки при клике вне
+  
   $(document).on("click", function(e){
     if(!$(e.target).closest("#searchInput, #suggestions").length){
       $("#suggestions").hide();
     }
   });
 
-  // Highlight helper
+  
   function highlightText(selector, term){
     const esc = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const re = new RegExp("("+esc+")", "ig");
@@ -72,10 +70,10 @@ $(document).ready(function(){
     $("#scrollBar").css("width", pct + "%");
   });
 
-  // Task 5: Animated counter (starts when element gets into view)
+  // Task 5: Animated counter 
   function animateCount($el){
     const target = parseInt($el.data("target")) || 0;
-    const duration = 1400; // ms
+    const duration = 1400; 
     const fps = 60;
     const steps = Math.round(duration / (1000 / fps));
     let current = 0;
@@ -137,8 +135,7 @@ $(document).ready(function(){
     $("#toastContainer").append($toast);
     $toast.hide().fadeIn(200).delay(timeout).fadeOut(400, function(){ $(this).remove(); });
   }
-  window.showToast = showToast; // чтобы вызвать извне
-
+  window.showToast = showToast; 
   // Task 8: Copy to clipboard button
   $(document).on("click", ".copy-btn", function(){
     const $btn = $(this);
@@ -153,7 +150,7 @@ $(document).ready(function(){
         setTimeout(()=> $btn.html(old), 1400);
       }).catch(() => showToast("Copy failed"));
     } else {
-      // fallback
+      
       const $tmp = $("<textarea>").val(text).appendTo("body").select();
       try {
         document.execCommand("copy");
@@ -164,7 +161,7 @@ $(document).ready(function(){
     }
   });
 
-  // Task 9: Lazy loading images (simple)
+  // Task 9: Lazy loading images 
   function lazyLoad(){
     $(".lazy").each(function(){
       const $img = $(this);
