@@ -9,10 +9,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
+  <a href="#mainContent" class="visually-hidden-focusable">Skip to main content</a>
+
   <div id="scrollProgress">
     <div id="scrollBar"></div>
   </div>
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #001f3f;">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #001f3f;" role="navigation" aria-label="Main Navigation">
     <div class="container-fluid">
       <div class="text-center mt-5">
         <img id="dumbbell" src="images/image.jpg" alt="Dumbbell" width="80">
@@ -29,7 +31,7 @@
     </div>
   </nav>
 
-  <main class="d-flex justify-content-center align-items-center vh-100 bg-light">
+  <main id="mainContent" class="d-flex justify-content-center align-items-center vh-100 bg-light">
     <div class="card shadow-lg border-0 rounded-4 p-4" style="max-width: 400px; width: 100%;">
       <h2 class="text-center mb-4 text-primary fw-bold">Login</h2>
       <form id="loginForm">
@@ -57,7 +59,7 @@
     </div>
   </main>
 
-  <footer class="bg-dark text-white text-center py-3">
+  <footer class="bg-dark text-white text-center py-3" role="contentinfo" aria-label="Footer">
     <p>Fitness Club © 2025 | Team “FitWeb” — Nurdana Modabay, Aknur Mazhitova</p>
   </footer>
 

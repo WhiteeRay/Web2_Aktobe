@@ -37,7 +37,7 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #111; /* overrides accent for contrast */
+  background: #111; 
   color: #fff;
   padding: 15px 30px;
 }
@@ -424,19 +424,84 @@ footer p {
 
 /* ===== MEDIA QUERIES ===== */
 
-/* Мобильные устройства (до 600px) */
-@media (max-width: 600px) {
-  h1 { font-size: 22px; }
-  p { font-size: 14px; }
-  .card, .service-box { flex: 1 1 100%; } /* карточки и секции в столбик */
+/* Для планшетов (ширина до 992px) */
+@media (max-width: 992px) {
+  .navbar-brand {
+    font-size: 1.4rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .trainer-card {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .card {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .stats .d-flex {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .carousel-slide img {
+    height: 250px;
+    object-fit: cover;
+  }
 }
 
-/* Планшеты (600–992px) */
-@media (min-width: 601px) and (max-width: 992px) {
-  h1 { font-size: 28px; }
-  p { font-size: 16px; }
-  .card, .service-box { flex: 1 1 45%; }
+/* Для смартфонов (ширина до 576px) */
+@media (max-width: 576px) {
+  header nav {
+    text-align: center;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  
+
+  #themeToggle {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .hero img,
+  .trainer-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .features .card,
+  .trainers-grid,
+  .stats .d-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
 }
+
 
 /* Десктоп (более 992px) */
 @media (min-width: 993px) {
@@ -450,22 +515,22 @@ footer p {
   object-fit: cover;
 }
 
-/*Task 7: carousel*/
+/* carousel*/
 .carousel-track {
   width: 100%;
   overflow: hidden;
-  background-color: #000; /* тёмный фон под фото */
+  background-color: #000; 
   padding: 20px 0;
 }
 
 .carousel-slide {
   display: flex;
-  width: calc(300px * 6); /* ширина = количество фото × ширина одной картинки */
-  animation: scroll 20s linear infinite; /* 20s — скорость анимации */
+  width: calc(300px * 6); 
+  animation: scroll 20s linear infinite; 
 }
 
 .carousel-slide img {
-  width: 300px;   /* уменьшенный размер */
+  width: 300px;   
   height: 200px;
   object-fit: cover;
   margin-right: 15px;
@@ -474,9 +539,16 @@ footer p {
 
 @keyframes scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* двигаем половину ширины, чтобы цикл повторялся плавно */
+  100% { transform: translateX(-50%); } 
 }
 
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1); 
+}
 
 /*contact form*/
 .contact-section {
@@ -496,6 +568,12 @@ footer p {
   border-color: #0d6efd;
   box-shadow: 0 0 6px rgba(13, 110, 253, 0.4);
 }
+
+#contactForm {
+  padding: 10px;
+}
+
+
 /* Default content area */
 .content {
   background-color: #ffffff;
@@ -527,9 +605,9 @@ footer p {
 .content.dark-theme {
   background-color: #000000;
   color: #ffffff;
-  max-width: 100%;   /* override the 1000px limit */
-  margin: 0;         /* remove side margins */
-  padding: 2rem;     /* optional inner padding */
+  max-width: 100%;   
+  margin: 0;         
+  padding: 2rem;     
 }
 
 
@@ -699,7 +777,7 @@ input:focus, textarea:focus {
 
 
 
-/* ASS 7 */
+
 /* suggestions (autocomplete) */
 .suggestions {
   position: absolute;
@@ -721,12 +799,31 @@ input:focus, textarea:focus {
 /* toast */
 .toast-msg{ background:#333; color:#fff; padding:10px 14px; margin-top:8px; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,.2); display:none; }
 
-/* scroll progress bar */
-#scrollProgress { background: rgba(0,0,0,0.06); height:6px; left:0; top:0; position:fixed; width:100%; z-index:9999; }
-#scrollBar { height:100%; width:0; background: linear-gradient(90deg,#ff7a18,#af002d 70%); transition: width 0.12s linear; }
 
-/* basic stat style */
-.stat { font-size:20px; margin:10px 20px; }
+
+/* scroll progress bar */
+#scrollProgress {
+  background: rgba(0,0,0,0.06); 
+  height: 6px;   
+  left: 0;     
+  top: 0;    
+  position: fixed;     
+  width: 100%;   
+  z-index: 9999; 
+}
+
+#scrollBar {
+  height: 100%;                                 /* same height as its parent (#scrollProgress) */
+  width: 0;                                     /* starts empty (0% width) */
+  background: linear-gradient(90deg, #ff7a18, #af002d 70%); /* colorful gradient fill */
+  transition: width 0.12s linear;               /* smooth width animation while scrolling */
+}
+
+.stat { 
+  font-size:20px; 
+  margin:10px 20px; 
+}
+
 
 /* copy button */
 .copy-btn { margin-top:6px; }
@@ -734,3 +831,67 @@ input:focus, textarea:focus {
 /* spinner alignment (Bootstrap) */
 .spinner-border { vertical-align: middle; margin-right:6px; }
 
+
+/* Light theme */
+.light-theme {
+  background-color: #fdfdfd;
+  color: #222;
+  transition: background 0.4s, color 0.4s;
+}
+
+/*  Dark theme */
+.dark-theme {
+  background-color: #121212;
+  color: #f1f1f1;
+  transition: background 0.4s, color 0.4s;
+}
+
+
+#themeToggle {
+  background: none;
+  border: 2px solid currentColor;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+#themeToggle:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.dark-theme #themeToggle:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/*TAsk 2*/
+a:focus, button:focus {
+  outline: 3px solid #ffcc00;
+  outline-offset: 3px;
+}
+
+.visually-hidden-focusable {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.visually-hidden-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 8px 12px;
+  background: #ffcc00;
+  color: black;
+  font-weight: bold;
+  z-index: 1000;
+}

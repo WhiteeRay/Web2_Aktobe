@@ -13,11 +13,13 @@
 </head>
 
 <body> 
+  <a href="#mainContent" class="visually-hidden-focusable">Skip to main content</a>
+
   <div id="scrollProgress">
     <div id="scrollBar"></div>
   </div>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark main-nav" style="background-color: #001f3f;">
+    <nav class="navbar navbar-expand-lg navbar-dark main-nav" style="background-color: #001f3f;" role="navigation" aria-label="Main Navigation">
       
       <div class="container d-flex align-items-center justify-content-between">
         <a class="navbar-brand" href="index.html">Fitness Club</a>
@@ -58,7 +60,7 @@
   </header>
 
   <!-- 🔹 Only this part changes theme -->
-  <main class="content">
+  <main id="mainContent" class="content">
     <section class="hero text-center py-4">
       <h2 class="section-title">Welcome to Fitness Club!</h2>
       <p>We offer modern equipment, group classes, and personal training.</p>
@@ -91,6 +93,8 @@
       <div class="card d-inline-block m-2 p-3">Group Programs</div>
     </section>
 
+
+    <!--TASk 5-->
     <section class="stats text-center my-5">
       <h2>Our Achievements</h2>
       <div class="d-flex justify-content-center gap-5 mt-3">
@@ -100,8 +104,11 @@
       </div>
     </section>
   </main>
+  <!--When you scroll down and this section appears,
+the numbers “0” → “1500” and “0” → “325” will smoothly count up.-->
 
-  <footer class="bg-dark text-white text-center py-4 mt-4">
+
+  <footer class="bg-dark text-white text-center py-4 mt-4" role="contentinfo" aria-label="Footer">
     <div class="container">
       <p class="mb-1">Fitness Club © 2025 | Team “FitWeb” — Nurdana Modabay, Aknur Mazhitova</p>
       <p class="mb-0">

@@ -11,14 +11,19 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
+  <a href="#mainContent" class="visually-hidden-focusable">Skip to main content</a>
+
   <div id="scrollProgress">
     <div id="scrollBar"></div>
   </div>
 
   <header> <!--class="header-section"-->
-    <nav class="navbar navbar-expand-lg navbar-dark main-nav" style="background-color: #001f3f;">
+    <nav class="navbar navbar-expand-lg navbar-dark main-nav" style="background-color: #001f3f;" role="navigation" aria-label="Main Navigation">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">About Our Club</a>
+        
+        <button id="themeToggle" class="btn btn-outline-light btn-sm">Switch Theme</button>
+              
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,7 +39,7 @@
     </nav>
   </header>
 
-  <main class="content">
+  <main id="mainContent" class="content">
     
     <section>
       <h2 class="section-title">Meet Our Trainers</h2>
@@ -106,7 +111,7 @@
   </main>
   
 
-  <footer class="bg-dark text-white text-center py-4 mt-4">
+  <footer class="bg-dark text-white text-center py-4 mt-4" role="contentinfo" aria-label="Footer">
     <div class="container">
       <p class="mb-1">Fitness Club © 2025 | Team “FitWeb” — Nurdana Modabay, Aknur Mazhitova</p>
       <p class="mb-0">
@@ -115,6 +120,7 @@
     </div>
   </footer>
   <script src="js/gallery.js"></script>
+  <script src="js/theme.js"></script>
   <script src="js/jquery-features.js"></script>
 </body>
 </html>
