@@ -71,12 +71,7 @@ html, body {
 /* =========================
    Content Layout
 ========================= */
-main.content {
-  flex: 1;
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
+
 
 .section-title {
   font-size: 1.8rem;
@@ -199,6 +194,14 @@ main.content {
 .trainer-card p {
   margin: 0.3rem 0;
   color: var(--text-light);
+}
+.trainers-grid {
+  display: flex;
+  justify-content: center;   
+  align-items: center;       
+  flex-wrap: wrap;           
+  gap: 2rem;                
+  margin-top: 1.5rem;
 }
 
 /* =========================
@@ -586,13 +589,6 @@ footer p {
   max-width: 100%;
   
 }
-.content.light-theme {
-  background-color: #ffffff;
-  color: #000000;
-  max-width: 100%;
-  margin: 0;
-  padding: 2rem;
-}
 
 .content.light-theme .card {
   background-color: #f9f9f9;
@@ -601,14 +597,6 @@ footer p {
 }
 
 
-/* Make content full width in dark mode */
-.content.dark-theme {
-  background-color: #000000;
-  color: #ffffff;
-  max-width: 100%;   
-  margin: 0;         
-  padding: 2rem;     
-}
 
 
 /* Optional: make inner cards match dark mode */
@@ -624,10 +612,7 @@ body {
   margin: 0;
   padding: 0;
 }
-body.dark-mode {
-  background-color: #121212;
-  color: #f5f5f5;
-}
+
 
 .popup-overlay {
   position: fixed;
@@ -641,6 +626,7 @@ body.dark-mode {
   align-items: center;
   z-index: 9999;
 }
+
 
 /* ===== Popup Box ===== */
 .popup-content {
@@ -842,7 +828,7 @@ input:focus, textarea:focus {
 /*  Dark theme */
 .dark-theme {
   background-color: #121212;
-  color: #f1f1f1;
+  color: #f3f1f1;
   transition: background 0.4s, color 0.4s;
 }
 
@@ -895,3 +881,66 @@ a:focus, button:focus {
   font-weight: bold;
   z-index: 1000;
 }
+
+/*Light Theme */
+body.light-theme #mainContent {
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+/* Dark Theme */
+body.dark-theme #mainContent {
+  background-color: #181818;
+  color: #f5f5f5;
+}
+
+/* Optional: make cards and stats fit the dark mode */
+body.dark-theme #mainContent .card {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+
+
+/* Smooth color transitions */
+#mainContent, .card {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+
+
+body.light-theme #workoutList {
+  background-color: #f3f3f3; /* light gray */
+  color: #222;               /* dark text for contrast */
+  border-radius: 8px;
+  padding: 1rem;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+
+body.dark-theme #workoutList {
+  background-color: #2a2a2a; 
+  color: #f5f5f5;           
+}
+
+body.light-theme .trainer-card {
+  background-color: #f3f3f3; 
+  color: #222;
+}
+
+
+body.dark-theme .trainer-card {
+  background-color: #2a2a2a; 
+  color: #f5f5f5;
+  box-shadow: 0 4px 10px rgba(255,255,255,0.1);
+}
+
+
+
+body.dark-theme .trainer-card p {
+  color: #e0e0e0;
+}
+
+
+

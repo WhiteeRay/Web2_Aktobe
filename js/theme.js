@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleBtn.addEventListener("click", () => {
       const isDark = body.classList.toggle("dark-theme");
       body.classList.toggle("light-theme", !isDark);
-
+    
       toggleBtn.textContent = isDark ? "Light Mode" : "Dark Mode";
       localStorage.setItem("mainTheme", isDark ? "dark" : "light");
     });
