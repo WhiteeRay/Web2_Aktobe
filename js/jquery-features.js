@@ -178,3 +178,36 @@ $(document).ready(function(){
   lazyLoad();
 
 });
+
+
+$(document).ready(function () {
+  $(".feature-btn").click(function () {
+    const feature = $(this).data("feature");
+    let content = "";
+
+    if (feature === "equipment") {
+      content = `
+        <div class="card p-3 mx-auto" style="max-width: 500px;">
+          <h5>🏋️ Modern Equipment</h5>
+          <p>Our gym offers the latest fitness machines, cardio equipment, and weight stations designed for safety and maximum performance.</p>
+        </div>
+      `;
+    } else if (feature === "trainers") {
+      content = `
+        <div class="card p-3 mx-auto" style="max-width: 500px;">
+          <h5>👩‍🏫 Professional Trainers</h5>
+          <p>Our certified trainers create personalized plans and guide you through every step of your fitness journey.</p>
+        </div>
+      `;
+    } else if (feature === "programs") {
+      content = `
+        <div class="card p-3 mx-auto" style="max-width: 500px;">
+          <h5>🤝 Group Programs</h5>
+          <p>Join our fun and motivating group classes — from yoga and pilates to HIIT and dance fitness — perfect for all levels!</p>
+        </div>
+      `;
+    }
+
+    $("#featureInfo").hide().html(content).fadeIn(400);
+  });
+});

@@ -2,7 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
   const toggleBtn = document.getElementById("themeToggle");
 
-  
+  themeToggle.addEventListener("click", () => {
+  themeToggle.classList.toggle("active");
+});
+
   const savedTheme = localStorage.getItem("mainTheme") || "light";
   body.classList.add(savedTheme === "dark" ? "dark-theme" : "light-theme");
 

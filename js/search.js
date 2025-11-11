@@ -34,3 +34,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 }); //
+
+const classes = ["Yoga Basics", "Advanced Cardio", "Strength Training", "Zumba Fun"];
+
+document.getElementById("searchInput").addEventListener("input", function () {
+  const query = this.value.toLowerCase();
+  const results = classes.filter(c => c.toLowerCase().includes(query));
+
+  localStorage.setItem("searchResults", JSON.stringify(results));
+
+  const resultList = document.getElementById("searchResults");
+  resultList.innerHTML = results.map(r => `<li class="list-group-item">${r}</li>`).join("");
+});

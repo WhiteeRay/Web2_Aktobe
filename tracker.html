@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Club - Fitness Tracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+  <a href="#mainContent" class="visually-hidden-focusable">Skip to main content</a>
+
+  <div id="scrollProgress">
+    <div id="scrollBar"></div>
+  </div>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark main-nav" style="background-color: #001f3f;" role="navigation" aria-label="Main Navigation">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Fitness Club</a>
+
+        <!-- Theme toggle button -->
+        <button id="themeToggle" class="btn btn-outline-light btn-sm">Switch Theme</button>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto" id="navMenu">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link active" href="tracker.html">Fitness Tracker</a></li>
+            <a class="btn btn-outline-light ms-2 px-3 py-1 rounded-pill" href="profile.html">Profile</a>
+          </ul> 
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="btn btn-outline-light ms-2 px-3 py-1 rounded-pill" href="login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="carousel-track">
+      <div class="carousel-slide">
+        <img src="images/slide1.jpg" alt="Fitness Training">
+        <img src="images/slide2.jpg" alt="Group Exercise">
+        <img src="images/slide3.jpg" alt="Personal Training">
+        <img src="images/slide1.jpg" alt="Fitness Training">
+        <img src="images/slide2.jpg" alt="Group Exercise">
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent" class="content">
+    
+ 
+
+    <section id="profile" class="section py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Your Fitness Profile</h2>
+        <div class="card shadow-lg">
+          <div class="card-body p-4">
+            <h3 class="card-title mb-4">Personal Information</h3>
+            <form id="profile-form">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group mb-3">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="age" min="15" max="100" required>
+                  </div>
+                  <div class="form-group mb-3">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select class="form-select" id="gender" required>
+                      <option value="">Select Gender</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                    </select>
+                  </div>
+                  <div class="form-group mb-3">
+                    <label for="weight" class="form-label">Weight (kg)</label>
+                    <input type="number" class="form-control" id="weight" min="30" max="200" step="0.1" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-3">
+                    <label for="height" class="form-label">Height (cm)</label>
+                    <input type="number" class="form-control" id="height" min="100" max="250" required>
+                  </div>
+                  <div class="form-group mb-3">
+                    <label for="activity-level" class="form-label">Activity Level</label>
+                    <select class="form-select" id="activity-level" required>
+                      <option value="">Select Activity Level</option>
+                      <option value="sedentary">Sedentary (little to no exercise)</option>
+                      <option value="light">Light (exercise 1-3 days/week)</option>
+                      <option value="moderate">Moderate (exercise 3-5 days/week)</option>
+                      <option value="active">Active (exercise 6-7 days/week)</option>
+                      <option value="very-active">Very Active (hard exercise daily)</option>
+                    </select>
+                  </div>
+                  <div class="form-group mb-3">
+                    <label for="fitness-goals" class="form-label">Fitness Goals</label>
+                    <select class="form-select" id="fitness-goals" required>
+                      <option value="">Select Fitness Goals</option>
+                      <option value="weight-loss">Weight Loss</option>
+                      <option value="muscle-gain">Muscle Gain</option>
+                      <option value="maintenance">Maintenance</option>
+                      <option value="endurance">Endurance</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Save Profile</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="nutrition" class="section py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Nutrition Tracking</h2>
+        <div class="card shadow-lg">
+          <div class="card-body p-4">
+            <h3 class="card-title mb-4">Search for Food Nutrition</h3>
+            <div class="row">
+              <div class="col-md-8">
+                <div class="form-group mb-3">
+                  <label for="food-search" class="form-label">Search Food Items</label>
+                  <input type="text" class="form-control" id="food-search" placeholder="e.g., apple, chicken breast, brown rice">
+                </div>
+              </div>
+              <div class="col-md-4 d-flex align-items-end">
+                <button id="search-food" class="btn btn-primary w-100">Search Nutrition</button>
+              </div>
+            </div>
+            
+            <div id="food-results" class="results-container mt-4">
+              <!-- Food results will be displayed here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="exercises" class="section py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Exercise Database</h2>
+        <div class="card shadow-lg">
+          <div class="card-body p-4">
+            <h3 class="card-title mb-4">Find Exercises</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group mb-3">
+                  <label for="exercise-search" class="form-label">Search Exercises</label>
+                  <input type="text" class="form-control" id="exercise-search" placeholder="e.g., push-up, squat, bicep curl">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group mb-3">
+                  <label for="body-part" class="form-label">Filter by Body Part</label>
+                  <select class="tracker-select" id="body-part">
+                    <option value="">All Body Parts</option>
+                    <option value="back">Back</option>
+                    <option value="cardio">Cardio</option>
+                    <option value="chest">Chest</option>
+                    <option value="lower arms">Lower Arms</option>
+                    <option value="lower legs">Lower Legs</option>
+                    <option value="neck">Neck</option>
+                    <option value="shoulders">Shoulders</option>
+                    <option value="upper arms">Upper Arms</option>
+                    <option value="upper legs">Upper Legs</option>
+                    <option value="waist">Waist</option>
+                </select>
+                </div>
+              </div>
+              <div class="col-md-2 d-flex align-items-end">
+                <button id="search-exercises" class="btn btn-primary w-100">Find Exercises</button>
+              </div>
+            </div>
+            
+            <div id="exercise-results" class="results-container mt-4">
+              <!-- Exercise results will be displayed here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="metrics" class="section py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Fitness Metrics</h2>
+        <div class="card shadow-lg">
+          <div class="card-body p-4">
+            <h3 class="card-title mb-4">Calculate Your Fitness Metrics</h3>
+            <p class="mb-4">Fill out your profile information first to calculate accurate fitness metrics.</p>
+            <div class="text-center">
+              <button id="calculate-metrics" class="btn btn-primary btn-lg">Calculate Metrics</button>
+            </div>
+            
+            <div id="metrics-results" class="metrics-display mt-4">
+              <!-- Metrics will be displayed here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats text-center my-5 py-5">
+      <div class="container">
+        <h2 class="section-title mb-5">Our Fitness Tracker Stats</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            <div class="stat">
+              <span class="count display-4" data-target="1500">0</span>
+              <p class="mt-2">+ Exercises Available</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat">
+              <span class="count display-4" data-target="500">0</span>
+              <p class="mt-2">+ Food Items Tracked</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat">
+              <span class="count display-4" data-target="95">0</span>
+              <p class="mt-2">% Accuracy Rate</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-4 mt-4" role="contentinfo" aria-label="Footer">
+    <div class="container">
+      <p class="mb-1">Fitness Club © 2025 | Team "FitWeb" — Nurdana Modabay, Aknur Mazhitova</p>
+      <p class="mb-0">
+        <a href="faq.html" class="text-decoration-none text-info">Have questions? Visit our FAQ page →</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/tracker.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/jquery-features.js"></script>
+</body>
+</html>

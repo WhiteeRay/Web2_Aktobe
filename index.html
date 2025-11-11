@@ -37,6 +37,9 @@
             <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
             <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="tracker.html">Tracker</a></li>
+            <a class="btn btn-outline-light ms-2 px-3 py-1 rounded-pill" href="profile.html">Profile</a>
+
           </ul> 
           <ul class="navbar-nav">
             <li class="nav-item">
@@ -68,19 +71,37 @@
 
     <section class="news-feed text-center my-5">
       <h3 class="mb-4">🏋️ Fitness Club News Feed</h3>
-      <div class="mb-3">
-        <button class="btn btn-outline-primary m-1" onclick="loadNews('workouts')">Workouts</button>
-        <button class="btn btn-outline-primary m-1" onclick="loadNews('nutrition')">Nutrition</button>
-        <button class="btn btn-outline-primary m-1" onclick="loadNews('events')">Events</button>
+      <div class="news-tags mb-3">
+        <span class="news-label bg-primary text-white px-4 py-2 m-2 rounded-pill shadow-sm">Workouts</span>
+        <span class="news-label bg-success text-white px-4 py-2 m-2 rounded-pill shadow-sm">Nutrition</span>
+        <span class="news-label bg-info text-dark px-4 py-2 m-2 rounded-pill shadow-sm">Events</span>
       </div>
-    </section>
 
-    <section class="features text-center">
-      <h3>Why Choose Us?</h3>
-      <div class="card d-inline-block m-2 p-3">Modern Equipment</div>
-      <div class="card d-inline-block m-2 p-3">Professional Trainers</div>
-      <div class="card d-inline-block m-2 p-3">Group Programs</div>
+
     </section>
+    
+
+   <section class="features text-center my-5">
+    <h3 class="mb-4">Why Choose Us?</h3>
+    <div class="feature-tags mb-3">
+      <button class="btn btn-outline-primary mx-2 feature-btn" data-feature="equipment">Modern Equipment</button>
+      <button class="btn btn-outline-success mx-2 feature-btn" data-feature="trainers">Professional Trainers</button>
+      <button class="btn btn-outline-info mx-2 feature-btn" data-feature="programs">Group Programs</button>
+    </div>
+
+    <div id="featureInfo" class="mt-4"></div>
+  </section>
+
+
+<script>
+document.getElementById("rating").addEventListener("change", function () {
+  const rating = this.value;
+  localStorage.setItem("gymRating", rating);
+  document.getElementById("ratingMsg").textContent = `Thanks! You rated us ${rating} stars.`;
+});
+</script>
+
+
   </main>
 
 
