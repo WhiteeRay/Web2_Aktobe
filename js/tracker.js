@@ -4,7 +4,7 @@ class FitnessTracker {
         this.apiConfig = {
             exerciseDB: {
                 baseURL: 'https://exercisedb.p.rapidapi.com',
-                apiKey: 'YOUR_RAPIDAPI_KEY_HERE', // Replace with your RapidAPI key
+                apiKey: 'e4e181e43emsh0e1911513aa2418p1ef9b2jsn89586de7c893', 
                 host: 'exercisedb.p.rapidapi.com'
             }
         };
@@ -33,7 +33,7 @@ class FitnessTracker {
 
     // Check if API key is configured
     checkApiStatus() {
-        if (this.apiConfig.exerciseDB.apiKey === 'YOUR_RAPIDAPI_KEY_HERE') {
+        if (this.apiConfig.exerciseDB.apiKey === 'e4e181e43emsh0e1911513aa2418p1ef9b2jsn89586de7c893') {
             console.warn('ExerciseDB API key not configured. Please add your RapidAPI key.');
             this.showMessage('ExerciseDB API key not configured. Using demo data.', 'info');
         }
@@ -164,7 +164,7 @@ class FitnessTracker {
             let exercises = [];
             
             // Check if API key is configured
-            if (this.apiConfig.exerciseDB.apiKey === 'YOUR_RAPIDAPI_KEY_HERE') {
+            if (this.apiConfig.exerciseDB.apiKey === 'e4e181e43emsh0e1911513aa2418p1ef9b2jsn89586de7c893') {
                 throw new Error('API key not configured');
             }
 
@@ -499,7 +499,7 @@ class FitnessTracker {
 
     // Demo nutrition data
     NUTRITION_DATA = {
-        "apple": { calories: 95, protein: 0.5, carbs: 25, fat: 0.3 },
+        "apple": { calories: 95, protein: 0.5, carbs: 26, fat: 0.3 },
         "banana": { calories: 105, protein: 1.3, carbs: 27, fat: 0.4 },
         "chicken breast": { calories: 165, protein: 31, carbs: 0, fat: 3.6 },
         "brown rice": { calories: 216, protein: 5, carbs: 45, fat: 1.8 },
