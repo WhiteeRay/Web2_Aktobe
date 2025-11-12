@@ -34,7 +34,7 @@ class FitnessTracker {
     // Check if API key is configured
     checkApiStatus() {
         if (this.apiConfig.exerciseDB.apiKey === 'e4e181e43emsh0e1911513aa2418p1ef9b2jsn89586de7c893') {
-            console.warn('ExerciseDB API key not configured. Please add your RapidAPI key.');
+            console.warn('ExerciseDB API key not configured.');
             this.showMessage('ExerciseDB API key not configured. Using demo data.', 'info');
         }
     }
@@ -455,59 +455,59 @@ class FitnessTracker {
     }
 
     // Demo exercise database (fallback)
-    EXERCISE_DEMO_DATA = [
-        {
-            name: "Push-up",
-            bodyPart: "chest",
-            target: "pectorals",
-            equipment: "body weight",
-            gifUrl: "",
-            instructions: [
-                "Start in a plank position with hands shoulder-width apart",
-                "Lower your body until chest nearly touches the floor",
-                "Keep elbows close to your body",
-                "Push back up to starting position"
-            ]
-        },
-        {
-            name: "Bodyweight Squat",
-            bodyPart: "legs",
-            target: "quads",
-            equipment: "body weight",
-            gifUrl: "",
-            instructions: [
-                "Stand with feet shoulder-width apart",
-                "Lower your body as if sitting in a chair",
-                "Keep chest up and back straight",
-                "Go as low as comfortable, then return to standing"
-            ]
-        },
-        {
-            name: "Plank",
-            bodyPart: "waist",
-            target: "abs",
-            equipment: "body weight",
-            gifUrl: "",
-            instructions: [
-                "Start in push-up position but on elbows",
-                "Keep body in straight line from head to heels",
-                "Engage core and hold for desired time",
-                "Don't let hips sag or rise too high"
-            ]
-        }
-    ];
+    // EXERCISE_DEMO_DATA = [
+    //     {
+    //         name: "Push-up",
+    //         bodyPart: "chest",
+    //         target: "pectorals",
+    //         equipment: "body weight",
+    //         gifUrl: "",
+    //         instructions: [
+    //             "Start in a plank position with hands shoulder-width apart",
+    //             "Lower your body until chest nearly touches the floor",
+    //             "Keep elbows close to your body",
+    //             "Push back up to starting position"
+    //         ]
+    //     },
+    //     {
+    //         name: "Bodyweight Squat",
+    //         bodyPart: "legs",
+    //         target: "quads",
+    //         equipment: "body weight",
+    //         gifUrl: "",
+    //         instructions: [
+    //             "Stand with feet shoulder-width apart",
+    //             "Lower your body as if sitting in a chair",
+    //             "Keep chest up and back straight",
+    //             "Go as low as comfortable, then return to standing"
+    //         ]
+    //     },
+    //     {
+    //         name: "Plank",
+    //         bodyPart: "waist",
+    //         target: "abs",
+    //         equipment: "body weight",
+    //         gifUrl: "",
+    //         instructions: [
+    //             "Start in push-up position but on elbows",
+    //             "Keep body in straight line from head to heels",
+    //             "Engage core and hold for desired time",
+    //             "Don't let hips sag or rise too high"
+    //         ]
+    //     }
+    // ];
 
-    // Demo nutrition data
-    NUTRITION_DATA = {
-        "apple": { calories: 95, protein: 0.5, carbs: 26, fat: 0.3 },
-        "banana": { calories: 105, protein: 1.3, carbs: 27, fat: 0.4 },
-        "chicken breast": { calories: 165, protein: 31, carbs: 0, fat: 3.6 },
-        "brown rice": { calories: 216, protein: 5, carbs: 45, fat: 1.8 },
-        "salmon": { calories: 206, protein: 22, carbs: 0, fat: 13 },
-        "broccoli": { calories: 55, protein: 3.7, carbs: 11, fat: 0.6 },
-        "eggs": { calories: 78, protein: 6.3, carbs: 0.6, fat: 5.3 },
-        "oatmeal": { calories: 158, protein: 6, carbs: 27, fat: 3.2 }
-    };
+    // // Demo nutrition data
+    // NUTRITION_DATA = {
+    //     "apple": { calories: 95, protein: 0.5, carbs: 26, fat: 0.3 },
+    //     "banana": { calories: 105, protein: 1.3, carbs: 27, fat: 0.4 },
+    //     "chicken breast": { calories: 165, protein: 31, carbs: 0, fat: 3.6 },
+    //     "brown rice": { calories: 216, protein: 5, carbs: 45, fat: 1.8 },
+    //     "salmon": { calories: 206, protein: 22, carbs: 0, fat: 13 },
+    //     "broccoli": { calories: 55, protein: 3.7, carbs: 11, fat: 0.6 },
+    //     "eggs": { calories: 78, protein: 6.3, carbs: 0.6, fat: 5.3 },
+    //     "oatmeal": { calories: 158, protein: 6, carbs: 27, fat: 3.2 }
+    // };
 }
 
 // Initialize the tracker when the page loads
